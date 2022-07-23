@@ -6,6 +6,20 @@ from xlwt import Workbook
 client = boto3.client('ce', region_name='us-east-1') #any specific region
 wb = Workbook()
 sheet1 = wb.add_sheet('Sheet 1')
+
+client = boto3.client(
+    's3',
+    aws_access_key_id = 'AKIA46SFIWN5AMWMDQVB', #add access key id
+    aws_secret_access_key = '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', # add access key
+    region_name = 'ap-south-1'
+)
+    
+resource = boto3.resource(
+    's3',
+    aws_access_key_id = 'AKIA46SFIWN5AMWMDQVB',
+    aws_secret_access_key = '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',
+    region_name = 'ap-south-1'
+)
   
 #startdate and enddate
 def get_credits(startdate, enddate):
